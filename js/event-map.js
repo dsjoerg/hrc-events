@@ -63,6 +63,7 @@ var eventsMap = function() {
         + " " + p.city + " " + p.postalCode;
     },
     addMarkers : function(features) {
+      if (features.length == 0) return;
       markers = [];
       features.forEach(function(f){
         var marker = L.marker(L.latLng(f.locations[0].latitude, f.locations[0].longitude));
