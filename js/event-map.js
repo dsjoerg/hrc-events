@@ -212,7 +212,7 @@ var eventsMap = function() {
       });
     }
   };
-    // 100 millisecond throttle was too fast, still got Too Many Requests complaints from mapzen
-  eventsApp.throttledDoSuggestion = _.throttle(eventsApp.doSuggestion, 250);
+    // 250 millisecond throttle was too fast, still got Too Many Requests complaints from mapzen
+  eventsApp.throttledDoSuggestion = _.throttle(eventsApp.doSuggestion, 500);
   return eventsApp;
 }
