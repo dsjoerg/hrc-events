@@ -125,6 +125,10 @@ var eventsMap = function() {
     },
     doSuggestion : function(query) {
       if (xhr) xhr.abort();
+      if (!query.trim()) {
+        eventsApp.showSuggestions([]);
+        return;
+      }
       xhr = d3.json("https://search.mapzen.com/v1/autocomplete?text="+query+"&sources=wof&api_key=search-Ff4Gs8o", function(error, json) {
         if (json && json.length)
           eventsApp.showSuggestions(json.features);
